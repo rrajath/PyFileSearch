@@ -68,3 +68,21 @@ def list_all_dirs(rootpath):
             all_dirs.append(os.path.join(root, dirname))
     return all_dirs
 #end
+
+# This function takes rootpath and filename as arguments and returns the filepath of the filename specified in the argument
+def search_file(rootpath, file):
+    for root, dirs, files in os.walk(rootpath):
+        for filename in files:
+            if file == filename:
+                return os.path.join(root, filename)
+    return None
+#end
+
+# This function takes rootpath and dirname as arguments and returns the dirpath of the dirname specified in the argument
+def search_dir(rootpath, dir):
+    for root, dirs, files in os.walk(rootpath):
+        for dirname in dirs:
+            if dir == dirname:
+                return os.path.join(root, dirname)
+    return None
+#end
