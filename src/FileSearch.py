@@ -59,3 +59,12 @@ def dirs_dict(rootpath):
                 dict_dirs[dir_path] = tmp
     return dict_dirs
 #end
+
+# This function takes rootpath as the argument and returns a 'list' of all the directories with their full paths.
+def list_all_dirs(rootpath):
+    all_dirs = []
+    for root, dirs, files in os.walk(rootpath):
+        for dirname in dirs:
+            all_dirs.append(os.path.join(root, dirname))
+    return all_dirs
+#end
